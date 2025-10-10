@@ -1,0 +1,19 @@
+/* Bordură animată verde în jurul regulamentului */
+.animated-border {
+  position: relative;
+  padding: 20px;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#0b0b0b, #0b0b0b) padding-box,
+              linear-gradient(130deg, #00ff66, #00ccff, #00ff66, #00ccff) border-box;
+  background-size: 300% 300%;
+  animation: borderMove 4s linear infinite;
+  box-shadow: 0 0 25px #00ff66a8;
+}
+
+/* Mișcarea gradientului pe margine */
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
