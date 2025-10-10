@@ -80,3 +80,20 @@ footer { background: #0a2a66; color: white; padding: 15px; margin-top: 30px; }
   .banner img { max-height: 180px; }
   .banner-line { height: 4px; }
 }
+
+.afterparty-link {
+  display: inline-block;
+  background-color: #0a2a66;
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.afterparty-link:hover {
+  background-color: #143fa0;
+  transform: scale(1.05);
+}
