@@ -97,3 +97,31 @@ footer { background: #0a2a66; color: white; padding: 15px; margin-top: 30px; }
   background-color: #143fa0;
   transform: scale(1.05);
 }
+
+.vote-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.vote-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff3366, #ff9933);
+  color: white;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2em;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.vote-link {
+  display: block;
+  margin: 10px auto 30px auto; /* spațiu între cele două butoane */
+  background-color: #ff3366;   /* poți schimba culoarea aici */
+}
+
+.vote-link:hover {
+  background-color: #ff4d88;
+}
+
