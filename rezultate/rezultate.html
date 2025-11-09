@@ -5,605 +5,16 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Rezultate Balul Bobocilor 2025 — Detaliat pe jurați</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="style.css">
-    <style>
-        :root {
-            --primary: #e63946;
-            --primary-dark: #c1121f;
-            --secondary: #457b9d;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #2a9d8f;
-            --warning: #e9c46a;
-            --danger: #e76f51;
-            --purple: #9d4edd;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 1.2rem 0;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.1"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="white" stroke="white" stroke-width="2"/></svg>');
-            background-size: 50px;
-        }
-        
-        header h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            position: relative;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-            padding: 0 1rem;
-        }
-        
-        .container {
-            width: 95%;
-            max-width: 1200px;
-            margin: 1.5rem auto;
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            position: relative;
-        }
-        
-        .page-description {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #555;
-            font-size: 1rem;
-            padding: 0 0.5rem;
-        }
-        
-        .category {
-            margin-bottom: 2rem;
-        }
-        
-        .category-title {
-            color: var(--primary);
-            margin: 1rem 0 0.8rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding-bottom: 0.3rem;
-            border-bottom: 2px solid var(--primary);
-            display: inline-block;
-        }
-        
-        .proba-section {
-            margin-bottom: 2rem;
-            background: var(--light);
-            border-radius: 10px;
-            padding: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            overflow-x: auto;
-        }
-        
-        .proba-title {
-            color: var(--secondary);
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .proba-title::before {
-            content: "•";
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 0.8rem 0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            min-width: 600px;
-        }
-        
-        th, td {
-            padding: 10px 8px;
-            text-align: center;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 0.85rem;
-        }
-        
-        th {
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-        }
-        
-        .gender-header {
-            background: var(--secondary);
-            color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-        
-        .score-cell {
-            font-weight: 500;
-        }
-        
-        .score-high {
-            color: var(--success);
-            font-weight: 600;
-        }
-        
-        .score-medium {
-            color: var(--warning);
-        }
-        
-        .score-low {
-            color: var(--danger);
-        }
-        
-        .pdf-section {
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .pdf-title {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        
-        .pdf-list {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        
-        .pdf-list a {
-            background: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            border: 2px solid var(--primary);
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            font-size: 0.9rem;
-        }
-        
-        .pdf-list a:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(230, 57, 70, 0.2);
-        }
-        
-        /* Secțiunea Popularitate */
-        .popularity-section {
-            margin: 2.5rem 0;
-        }
-        
-        .popularity-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 1rem;
-        }
-        
-        .popularity-table {
-            flex: 1 1 100%;
-            max-width: 500px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-        }
-        
-        .popularity-header {
-            padding: 0.8rem;
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-        
-        .popularity-boys {
-            background: linear-gradient(135deg, var(--purple) 0%, #7b2cbf 100%);
-        }
-        
-        .popularity-girls {
-            background: linear-gradient(135deg, #FF6B6B 0%, #ee5a52 100%);
-        }
-        
-        .popularity-table th {
-            background: #f8f9fa;
-            color: var(--dark);
-            font-size: 0.85rem;
-        }
-        
-        .popularity-table tr:first-child td {
-            background: rgba(157, 78, 221, 0.05);
-            font-weight: 600;
-        }
-        
-        .popularity-table tr:nth-child(2) td {
-            background: rgba(255, 107, 107, 0.05);
-            font-weight: 600;
-        }
-
-        /* Stiluri pentru pozele din tabelele de popularitate */
-        .popularity-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 10px auto;
-            display: block;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .popularity-image:hover {
-            transform: scale(1.02);
-        }
-        
-        /* Secțiunea Câștigători */
-        .winners-section {
-            margin: 2.5rem 0;
-            text-align: center;
-        }
-
-        /* Stiluri pentru secțiunea câștigători unificată */
-        .winners-single {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-
-        .winner-combined {
-            text-align: center;
-            max-width: 100%;
-        }
-
-        .winner-image-large {
-            width: 200px;
-            height: 200px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 3px solid var(--primary);
-            margin: 0 auto 1rem;
-            background: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            font-size: 0.9rem;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .winner-image-large:hover {
-            transform: scale(1.05);
-        }
-
-        .winner-image-large img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .winner-name-large {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .winner-points-combined {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .winner-points-combined span {
-            font-size: 1rem;
-            color: var(--success);
-            font-weight: 600;
-        }
-        
-        .ranking-section {
-            margin: 2.5rem 0;
-        }
-        
-        .ranking-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 1rem;
-        }
-        
-        .ranking-table {
-            flex: 1 1 100%;
-            max-width: 500px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-        }
-        
-        .ranking-header {
-            padding: 0.8rem;
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-        
-        .boys-header {
-            background: linear-gradient(135deg, #0074D9 0%, #0056b3 100%);
-        }
-        
-        .girls-header {
-            background: linear-gradient(135deg, #E84393 0%, #c2185b 100%);
-        }
-        
-        .ranking-table th {
-            background: #f8f9fa;
-            color: var(--dark);
-            font-size: 0.85rem;
-        }
-        
-        .ranking-table tr:first-child {
-            background: rgba(0, 116, 217, 0.05);
-        }
-        
-        .ranking-table tr:nth-child(2) {
-            background: rgba(232, 67, 147, 0.05);
-        }
-        
-        /* Modal pentru zoom imagine */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 95%;
-            max-height: 95%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(255,255,255,0.1);
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
-            background: rgba(0,0,0,0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close:hover {
-            background: rgba(0,0,0,0.7);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Touch-friendly improvements */
-        .touch-optimized {
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        .touch-optimized:active {
-            transform: scale(0.98);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 1.2rem 0;
-            color: #6c757d;
-            margin-top: 1.5rem;
-            border-top: 1px solid #e9ecef;
-            font-size: 0.9rem;
-        }
-        
-        /* Mobile-first responsive adjustments */
-        @media (min-width: 768px) {
-            header {
-                padding: 1.5rem 0;
-            }
-            
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            .container {
-                padding: 2rem;
-                border-radius: 16px;
-                margin: 2rem auto;
-            }
-            
-            .category-title {
-                font-size: 1.4rem;
-            }
-            
-            .proba-section {
-                padding: 1.5rem;
-                border-radius: 12px;
-            }
-            
-            th, td {
-                padding: 12px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .pdf-list a {
-                padding: 12px 20px;
-                font-size: 1rem;
-            }
-            
-            .popularity-table {
-                flex: 1 1 450px;
-            }
-            
-            .ranking-table {
-                flex: 1 1 450px;
-            }
-            
-            .winner-image-large {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .winner-name-large {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.3rem;
-            }
-            
-            .container {
-                padding: 1rem;
-                width: 98%;
-            }
-            
-            .page-description {
-                font-size: 0.9rem;
-            }
-            
-            .category-title {
-                font-size: 1.1rem;
-            }
-            
-            .proba-title {
-                font-size: 1rem;
-            }
-            
-            th, td {
-                padding: 8px 6px;
-                font-size: 0.8rem;
-            }
-            
-            .pdf-list {
-                gap: 8px;
-            }
-            
-            .pdf-list a {
-                padding: 8px 12px;
-                font-size: 0.85rem;
-            }
-            
-            .winner-image-large {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .winner-name-large {
-                font-size: 1.2rem;
-            }
-            
-            .winner-points-combined span {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Horizontal scroll indicator for tables */
-        .scroll-hint {
-            text-align: center;
-            color: #6c757d;
-            font-size: 0.8rem;
-            margin-top: 5px;
-            display: none;
-        }
-
-        @media (max-width: 767px) {
-            .scroll-hint {
-                display: block;
-            }
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="style.css">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-55R4RZPHNQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-55R4RZPHNQ');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-55R4RZPHNQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-55R4RZPHNQ');
+    </script>
+</head>
 <body>
     <!-- Modal pentru zoom imagine -->
     <div id="imageModal" class="modal">
@@ -621,22 +32,52 @@
         <div class="winners-section">
             <h2 class="category-title">🏆 Câștigătorii Balului Bobocilor 2025</h2>
             
-            <div class="winners-single">
-                <div class="winner-combined">
-                    <div class="winner-image-large touch-optimized">
-                        <img src="poze/WhatsApp Image 2025-11-08 at 18.31.35_964315cb.jpg" alt="Câștigătorii Balului Bobocilor 2025 - Cunicel Elena și Mleziva Andrei">
+            <div class="winners-container">
+                <!-- Locul 1 -->
+                <div class="winner-group">
+                    <div class="winner-image touch-optimized">
+                        <img src="poze/Locul 1.jpg" alt="Câștigătorii Locul 1 - Cunicel Elena și Mleziva Andrei">
                     </div>
-                    <div class="winner-names">
-                        <div class="winner-name-large">Cunicel Elena & Mleziva Andrei</div>
-                        <div class="winner-title">CÂȘTIGĂTORII BALULUI BOBOCILOR 2025</div>
-                        <div class="winner-points-combined">
-                            <span>Cunicel Elena: 67 puncte</span>
-                            <span>Mleziva Andrei: 66 puncte</span>
-                        </div>
+                    <div class="winner-names">Cunicel Elena & Mleziva Andrei</div>
+                    <div class="winner-position">LOCUL 1</div>
+                    <div class="winner-points">
+                        <span>Cunicel Elena: 73 puncte</span>
+                        <span>Mleziva Andrei: 71 puncte</span>
+                    </div>
+                </div>
+                
+                <!-- Locul 2 -->
+                <div class="winner-group">
+                    <div class="winner-image touch-optimized">
+                        <img src="poze/Locul 2.jpg" alt="Câștigătorii Locul 2 - Nedelcu Gabriela și Stănică Vlad">
+                    </div>
+                    <div class="winner-names">Nedelcu Gabriela & Stănică Vlad</div>
+                    <div class="winner-position">LOCUL 2</div>
+                    <div class="winner-points">
+                        <span>Nedelcu Gabriela: 70 puncte</span>
+                        <span>Stănică Vlad: 70 puncte</span>
+                    </div>
+                </div>
+                
+                <!-- Locul 3 -->
+                <div class="winner-group">
+                    <div class="winner-image touch-optimized">
+                        <img src="poze/Locul 3.jpg" alt="Câștigătorii Locul 3 - Spiridon Flavia și Drăghicescu Gabriel">
+                    </div>
+                    <div class="winner-names">Spiridon Flavia & Drăghicescu Gabriel</div>
+                    <div class="winner-position">LOCUL 3</div>
+                    <div class="winner-points">
+                        <span>Spiridon Flavia: 68 puncte</span>
+                        <span>Drăghicescu Gabriel: 67 puncte</span>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="page-description">
+            <p>Acestă pagină prezintă rezultatele detaliate pentru toate probele Balului Bobocilor 2025, cu punctajele acordate de fiecare jurat în parte.</p>
+        </div>
+        
         <div class="category">
             <h2 class="category-title">📋 Rezultate pe probe</h2>
             
@@ -752,17 +193,28 @@
             </div>
         </div>
 
-        <!-- SECȚIUNEA: POPULARITATE -->
+        
+             <!-- SECȚIUNEA: POPULARITATE -->
         <div class="popularity-section">
             <h2 class="category-title">❤️ Clasament Popularitate</h2>
+            
+            <!-- Poza câștigătorilor popularității -->
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="poze/Popularitate.jpg" alt="Câștigătorii Popularității" class="popularity-image touch-optimized" style="max-width: 500px; width: 100%;">
+                <div style="font-size: 1.1rem; color: #333; margin-top: 15px; font-weight: 600;">
+                    Câștigătorii votului publicului
+                </div>
+            </div>
+
             <div class="popularity-container">
+                
                 <div class="popularity-table">
                     <div class="popularity-header popularity-boys">Băieți 👔</div>
                     <table>
                         <tr>
                             <th>Poz</th>
                             <th>Concurent</th>
-                            <th>Puncte</th>
+                            <th>Pct</th>
                         </tr>
                         <tr><td>1</td><td>Stănică Vlad</td><td>112</td></tr>
                         <tr><td>2</td><td>Drăghicescu Gabriel</td><td>71</td></tr>
@@ -781,7 +233,7 @@
                         <tr>
                             <th>Poz</th>
                             <th>Concurentă</th>
-                            <th>Puncte</th>
+                            <th>Pct</th>
                         </tr>
                         <tr><td>1</td><td>Cunicel Elena</td><td>162</td></tr>
                         <tr><td>2</td><td>Călinoiu Patricia</td><td>81</td></tr>
@@ -791,31 +243,31 @@
                         <tr><td>6</td><td>Calea Ioana</td><td>32</td></tr>
                         <tr><td>7</td><td>Voniafca Monica</td><td>25</td></tr>
                     </table>
-                    <img src="poze/fete.png" alt="Clasament popularitate fete" class="popularity-image touch-optimized">
+                     <img src="poze/fete.png" alt="Clasament popularitate fete" class="popularity-image touch-optimized">
                 </div>
             </div>
         </div>
-
         
-        <!-- CLASAMENT FINAL -->
+              <!-- CLASAMENT FINAL -->
         <div class="ranking-section">
             <h2 class="category-title">📊 Clasament final - Juriu</h2>
             
             <div class="ranking-container">
+                
                 <div class="ranking-table">
                     <div class="ranking-header boys-header">Băieți 👔</div>
                     <table>
                         <tr>
                             <th>Concurent</th>
-                            <th>Total puncte</th>
+                            <th>Total</th>
                         </tr>
-                        <tr><td>Mleziva Andrei</td><td class="score-high">66</td></tr>
-                        <tr><td>Stănică Vlad</td><td class="score-high">65</td></tr>
-                        <tr><td>Drăghicescu Gabriel</td><td>62</td></tr>
-                        <tr><td>Enea Bogdan</td><td>59</td></tr>
-                        <tr><td>Ținică Darius</td><td>58</td></tr>
-                        <tr><td>Țerescu Robert</td><td>57</td></tr>
-                        <tr><td>Brăgău Sergiu</td><td>55</td></tr>
+                        <tr><td>Mleziva Andrei</td><td class="score-high">71</td></tr>
+                        <tr><td>Stănică Vlad</td><td class="score-high">70</td></tr>
+                        <tr><td>Drăghicescu Gabriel</td><td>67</td></tr>
+                        <tr><td>Enea Bogdan</td><td>64</td></tr>
+                        <tr><td>Ținică Darius</td><td>62</td></tr>
+                        <tr><td>Țerescu Robert</td><td>62</td></tr>
+                        <tr><td>Brăgău Sergiu</td><td>60</td></tr>
                     </table>
                 </div>
                 
@@ -824,79 +276,20 @@
                     <table>
                         <tr>
                             <th>Concurentă</th>
-                            <th>Total puncte</th>
+                            <th>Total</th>
                         </tr>
-                        <tr><td>Cunicel Elena</td><td class="score-high">67</td></tr>
-                        <tr><td>Nedelcu Gabriela</td><td class="score-high">65</td></tr>
-                        <tr><td>Spiridon Flavia</td><td>63</td></tr>
-                        <tr><td>Călinoiu Patricia</td><td>61</td></tr>
-                        <tr><td>Iacobescu Petronela</td><td>61</td></tr>
-                        <tr><td>Calea Ioana</td><td>60</td></tr>
-                        <tr><td>Voniafca Monica</td><td>58</td></tr>
+                        <tr><td>Cunicel Elena</td><td class="score-high">72</td></tr>
+                        <tr><td>Nedelcu Gabriela</td><td class="score-high">70</td></tr>
+                        <tr><td>Spiridon Flavia</td><td>68</td></tr>
+                        <tr><td>Călinoiu Patricia</td><td>66</td></tr>
+                        <tr><td>Iacobescu Petronela</td><td>66</td></tr>
+                        <tr><td>Calea Ioana</td><td>65</td></tr>
+                        <tr><td>Voniafca Monica</td><td>62</td></tr>
                     </table>
                 </div>
             </div>
         </div>
-        
-        <footer>
-            <p>&copy; 2025 Balul Bobocilor — bb2025.online</p>
-        </footer>
-    </div>
 
-    <script>
-        // Funcționalitate pentru zoom imagine
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('zoomedImage');
-            const closeBtn = document.querySelector('.close');
-            
-            // Adăugăm event listeners pentru toate imaginile clickable
-            const clickableImages = document.querySelectorAll('.winner-image-large, .popularity-image');
-            
-            clickableImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    const imgSrc = this.querySelector('img') ? this.querySelector('img').src : this.src;
-                    modal.style.display = 'block';
-                    modalImg.src = imgSrc;
-                });
-            });
-            
-            // Închidere modal
-            closeBtn.addEventListener('click', function() {
-                modal.style.display = 'none';
-            });
-            
-            // Închidere modal cu click în afara imaginii
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-            
-            // Închidere modal cu tasta ESC
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.style.display === 'block') {
-                    modal.style.display = 'none';
-                }
-            });
-            
-            // Touch optimization pentru dispozitive mobile
-            if ('ontouchstart' in window) {
-                document.body.classList.add('touch-device');
-                
-                // Prevent default pentru butoanele PDF pe touch
-                const pdfLinks = document.querySelectorAll('.pdf-list a');
-                pdfLinks.forEach(link => {
-                    link.addEventListener('touchstart', function() {
-                        this.classList.add('touch-optimized');
-                    });
-                    
-                    link.addEventListener('touchend', function() {
-                        this.classList.remove('touch-optimized');
-                    });
-                });
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
